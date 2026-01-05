@@ -1,0 +1,21 @@
+@startuml
+title Fibonacci Iterative - Activity Diagram
+
+start
+if (n <= 1?) then (yes)
+    :return n;
+    stop
+else (no)
+    :prev = 0;
+    :curr = 1;
+endif
+
+while (i <= n)
+    :next = prev + curr;
+    :prev = curr;
+    :curr = next;
+endwhile
+
+:return curr;
+stop
+@enduml

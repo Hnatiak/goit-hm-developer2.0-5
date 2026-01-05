@@ -1,0 +1,22 @@
+@startuml
+title Fibonacci Recursive - Sequence Diagram
+
+participant Client
+participant "FibonacciRecursive" as FR
+
+Client -> FR : fib(n)
+activate FR
+
+FR -> FR : fib(n-1)
+activate FR
+FR --> FR : result
+deactivate FR
+
+FR -> FR : fib(n-2)
+activate FR
+FR --> FR : result
+deactivate FR
+
+FR --> Client : fib(n-1) + fib(n-2)
+deactivate FR
+@enduml
